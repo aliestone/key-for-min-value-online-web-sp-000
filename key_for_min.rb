@@ -1,14 +1,7 @@
+
 def key_for_min_value(name_hash)
-  return nil if name_hash.empty?
-  min_key = nil
-  min_value = nil
-  name_hash.each do |key, value|
-    min_key = key if min_key == nil
-    min_value = value if min_value == nil
-    if value < min_value
-    min_value = value
-    min_key = key
-  end
+  return nil if hash.empty?
+  arr = hash.collect { |k, v| v }.sort
 end
-  min_key
-  
+hash.each { |k, v| return k if v == arr[0] }
+end
