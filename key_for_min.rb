@@ -1,8 +1,11 @@
-
 def key_for_min_value(name_hash)
-  return nil if name_hash.empty?
-  name_hash = hash.collect { |k, v| v }.sort
-  name_hash.each { |k, v| return k if v == arr[0] }
+    lowest_key = nil
+    lowest_value = nil
+    name_hash.each do |key, value|
+        if lowest_value == nil || value < lowest_value
+            lowest_value = value
+            lowest_key = key
+        end
+    end
+    lowest_key
 end
-
-key_for_min_value
